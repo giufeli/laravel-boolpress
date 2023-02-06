@@ -9,8 +9,6 @@ import PageAbout from './pages/PageAbout';
 import PagePosts from './pages/PagePosts';
 import PagePost from './pages/PagePost';
 
-import Page404 from './pages/Page404';
-
 Vue.use(VueRouter);
 
 
@@ -36,11 +34,6 @@ const router = new VueRouter({
             name: 'postsShow',
             component: PagePost,
             props: true,
-        },
-        {
-            path: '/Page404',
-            name: 'Page404',
-            component: Page404,
         },
     ]
 });

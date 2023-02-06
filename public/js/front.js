@@ -3271,38 +3271,12 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: 'App',
   components: {
     Navbar: _components_NavBar__WEBPACK_IMPORTED_MODULE_0__["default"]
-  },
-  data: function data() {
-    return {
-      arrPosts: []
-    };
-  },
-  created: function created() {
-    var _this = this;
-    axios.get('/api/posts').then(function (response) {
-      return _this.arrPosts = response.data.results;
-    });
   }
 });
 
@@ -3319,6 +3293,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -3439,8 +3421,32 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({});
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  data: function data() {
+    return {
+      arrPosts: []
+    };
+  },
+  created: function created() {
+    var _this = this;
+    axios.get('/api/posts').then(function (response) {
+      return _this.arrPosts = response.data.results;
+    });
+  }
+});
 
 /***/ }),
 
@@ -3464,14 +3470,13 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm.js");
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm.js");
 /* harmony import */ var _App_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./App.vue */ "./resources/js/App.vue");
-/* harmony import */ var vue_router__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! vue-router */ "./node_modules/vue-router/dist/vue-router.esm.js");
+/* harmony import */ var vue_router__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! vue-router */ "./node_modules/vue-router/dist/vue-router.esm.js");
 /* harmony import */ var _pages_PageHome__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./pages/PageHome */ "./resources/js/pages/PageHome.vue");
 /* harmony import */ var _pages_PageAbout__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./pages/PageAbout */ "./resources/js/pages/PageAbout.vue");
 /* harmony import */ var _pages_PagePosts__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./pages/PagePosts */ "./resources/js/pages/PagePosts.vue");
 /* harmony import */ var _pages_PagePost__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./pages/PagePost */ "./resources/js/pages/PagePost.vue");
-/* harmony import */ var _pages_Page404__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./pages/Page404 */ "./resources/js/pages/Page404.vue");
 __webpack_require__(/*! ./common */ "./resources/js/common.js");
 
 
@@ -3480,9 +3485,8 @@ __webpack_require__(/*! ./common */ "./resources/js/common.js");
 
 
 
-
-vue__WEBPACK_IMPORTED_MODULE_6__["default"].use(vue_router__WEBPACK_IMPORTED_MODULE_7__["default"]);
-var router = new vue_router__WEBPACK_IMPORTED_MODULE_7__["default"]({
+vue__WEBPACK_IMPORTED_MODULE_5__["default"].use(vue_router__WEBPACK_IMPORTED_MODULE_6__["default"]);
+var router = new vue_router__WEBPACK_IMPORTED_MODULE_6__["default"]({
   routes: [{
     path: '/',
     name: 'home',
@@ -3500,13 +3504,9 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_7__["default"]({
     name: 'postsShow',
     component: _pages_PagePost__WEBPACK_IMPORTED_MODULE_4__["default"],
     props: true
-  }, {
-    path: '/Page404',
-    name: 'Page404',
-    component: _pages_Page404__WEBPACK_IMPORTED_MODULE_5__["default"]
   }]
 });
-new vue__WEBPACK_IMPORTED_MODULE_6__["default"]({
+new vue__WEBPACK_IMPORTED_MODULE_5__["default"]({
   el: '#root',
   render: function render(h) {
     return h(_App_vue__WEBPACK_IMPORTED_MODULE_0__["default"]);
@@ -11319,40 +11319,6 @@ component.options.__file = "resources/js/components/NavBar.vue"
 
 /***/ }),
 
-/***/ "./resources/js/pages/Page404.vue":
-/*!****************************************!*\
-  !*** ./resources/js/pages/Page404.vue ***!
-  \****************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
-var render, staticRenderFns
-var script = {}
-
-
-/* normalize component */
-;
-var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_0__["default"])(
-  script,
-  render,
-  staticRenderFns,
-  false,
-  null,
-  null,
-  null
-  
-)
-
-component.options.__file = "resources/js/pages/Page404.vue"
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (component.exports);
-
-/***/ }),
-
 /***/ "./resources/js/pages/PageAbout.vue":
 /*!******************************************!*\
   !*** ./resources/js/pages/PageAbout.vue ***!
@@ -11741,7 +11707,7 @@ var render = function () {
     [
       _c("Navbar"),
       _vm._v(" "),
-      _c("main", { staticClass: "p-5" }, [_c("router-view")], 1),
+      _c("main", { staticClass: "container" }, [_c("router-view")], 1),
     ],
     1
   )
@@ -11775,59 +11741,66 @@ var render = function () {
       { staticClass: "navbar navbar-expand-lg navbar-light bg-light" },
       [
         _c(
-          "router-link",
-          { staticClass: "navbar-brand", attrs: { to: { name: "home" } } },
-          [_vm._v("Home")]
-        ),
-        _vm._v(" "),
-        _vm._m(0),
-        _vm._v(" "),
-        _c(
           "div",
-          {
-            staticClass: "collapse navbar-collapse",
-            attrs: { id: "navbarSupportedContent" },
-          },
+          { staticClass: "container" },
           [
-            _c("ul", { staticClass: "navbar-nav mr-auto" }, [
-              _c(
-                "li",
-                { staticClass: "nav-item" },
-                [
-                  _c(
-                    "router-link",
-                    {
-                      staticClass: "navbar-brand",
-                      attrs: { to: { name: "about" } },
-                    },
-                    [_vm._v("About")]
-                  ),
-                ],
-                1
-              ),
-              _vm._v(" "),
-              _c(
-                "li",
-                { staticClass: "nav-item" },
-                [
-                  _c(
-                    "router-link",
-                    {
-                      staticClass: "navbar-brand",
-                      attrs: { to: { name: "postsIndex" } },
-                    },
-                    [_vm._v("Posts")]
-                  ),
-                ],
-                1
-              ),
-            ]),
+            _c(
+              "router-link",
+              { staticClass: "navbar-brand", attrs: { to: { name: "home" } } },
+              [_vm._v("Home")]
+            ),
             _vm._v(" "),
-            _vm._m(1),
-          ]
+            _vm._m(0),
+            _vm._v(" "),
+            _c(
+              "div",
+              {
+                staticClass:
+                  "collapse navbar-collapse d-flex justify-content-between",
+                attrs: { id: "navbarSupportedContent" },
+              },
+              [
+                _c("ul", { staticClass: "navbar-nav mr-auto pl-4" }, [
+                  _c(
+                    "li",
+                    { staticClass: "nav-item" },
+                    [
+                      _c(
+                        "router-link",
+                        {
+                          staticClass: "navbar-brand",
+                          attrs: { to: { name: "about" } },
+                        },
+                        [_vm._v("About")]
+                      ),
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "li",
+                    { staticClass: "nav-item" },
+                    [
+                      _c(
+                        "router-link",
+                        {
+                          staticClass: "navbar-brand",
+                          attrs: { to: { name: "postsIndex" } },
+                        },
+                        [_vm._v("Posts")]
+                      ),
+                    ],
+                    1
+                  ),
+                ]),
+                _vm._v(" "),
+                _vm._m(1),
+              ]
+            ),
+          ],
+          1
         ),
-      ],
-      1
+      ]
     ),
   ])
 }
@@ -11856,24 +11829,30 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("form", {}, [
-      _c("input", {
-        staticClass: "form-control mr-sm-2",
-        attrs: {
-          type: "search",
-          placeholder: "Search",
-          "aria-label": "Search",
-        },
-      }),
-      _vm._v(" "),
-      _c(
-        "button",
-        {
-          staticClass: "btn btn-outline-success my-2 my-sm-0",
-          attrs: { type: "submit" },
-        },
-        [_vm._v("Search")]
-      ),
+    return _c("form", { attrs: { action: "" } }, [
+      _c("ul", { staticClass: "navbar-nav mr-auto pl-4 gap-5" }, [
+        _c("li", { staticClass: "nav-item" }, [
+          _c("input", {
+            staticClass: "form-control mr-sm-2",
+            attrs: {
+              type: "search",
+              placeholder: "Search",
+              "aria-label": "Search",
+            },
+          }),
+        ]),
+        _vm._v(" "),
+        _c("li", { staticClass: "nav-item" }, [
+          _c(
+            "button",
+            {
+              staticClass: "btn btn-outline-success my-2 my-sm-0",
+              attrs: { type: "submit" },
+            },
+            [_vm._v("Search")]
+          ),
+        ]),
+      ]),
     ])
   },
 ]
@@ -11994,16 +11973,46 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c("div", [
+    _c("h1", [_vm._v("Post")]),
+    _vm._v(" "),
+    _c(
+      "div",
+      { staticClass: "row g-3" },
+      _vm._l(_vm.arrPosts, function (post) {
+        return _c("div", { key: post.id, staticClass: "col-sm-6 col-md-4" }, [
+          _c("div", { staticClass: "card h-100" }, [
+            _c("img", {
+              staticClass: "card-img-top",
+              attrs: { src: post.image, alt: post.title },
+            }),
+            _vm._v(" "),
+            _c("div", { staticClass: "card-body d-flex flex-column" }, [
+              _c("h5", { staticClass: "card-title" }, [
+                _vm._v(_vm._s(post.title)),
+              ]),
+              _vm._v(" "),
+              _c("p", { staticClass: "card-text flex-grow-1" }, [
+                _vm._v(_vm._s(post.excerpt)),
+              ]),
+              _vm._v(" "),
+              _c(
+                "a",
+                {
+                  staticClass: "btn btn-primary",
+                  attrs: { href: "admin/posts/" + post.id },
+                },
+                [_vm._v("Leggi")]
+              ),
+            ]),
+          ]),
+        ])
+      }),
+      0
+    ),
+  ])
 }
-var staticRenderFns = [
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", [_c("h1", [_vm._v("Index dei Post")])])
-  },
-]
+var staticRenderFns = []
 render._withStripped = true
 
 
