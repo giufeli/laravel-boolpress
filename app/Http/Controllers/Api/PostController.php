@@ -22,7 +22,9 @@ class PostController extends Controller
 
     public function show(Post $post)
     {
-        //return view('post.index', compact('post'))
+
+        //$post = Post::where('id', $post->id)->with(['category', 'tags'])->first();
+
         return response()->json([
             'succes'=> true,
             'results'=> $post

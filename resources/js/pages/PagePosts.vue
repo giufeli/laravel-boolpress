@@ -8,7 +8,7 @@
                         <div class="card-body d-flex flex-column">
                         <h5 class="card-title">{{ post.title }}</h5>
                         <p class="card-text flex-grow-1">{{ post.excerpt }}</p>
-                        <a :href="'admin/posts/' + post.id" class="btn btn-primary">Leggi</a>
+                        <router-link :to="{name: 'postsShow', params: {id: post.id} }" class="btn btn-primary">Leggi</router-link>
                     </div>
                 </div>
             </div>

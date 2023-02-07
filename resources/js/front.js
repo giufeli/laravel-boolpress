@@ -30,7 +30,7 @@ const router = new VueRouter({
             component: PagePosts,
         },
         {
-            path: '/posts/:slug',
+            path: '/posts/:id',
             name: 'postsShow',
             component: PagePost,
             props: true,

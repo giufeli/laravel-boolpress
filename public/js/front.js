@@ -3371,6 +3371,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({});
 
@@ -3397,9 +3398,25 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  props: ['slug', 'author']
+  props: ['slug', 'author'],
+  data: function data() {
+    return {
+      arrPosts: []
+    };
+  },
+  created: function created() {
+    var _this = this;
+    axios.get('/api/posts').then(function (response) {
+      return _this.arrPosts = response.data.results;
+    });
+  }
 });
 
 /***/ }),
@@ -3500,7 +3517,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_6__["default"]({
     name: 'postsIndex',
     component: _pages_PagePosts__WEBPACK_IMPORTED_MODULE_3__["default"]
   }, {
-    path: '/posts/:slug',
+    path: '/posts/:id',
     name: 'postsShow',
     component: _pages_PagePost__WEBPACK_IMPORTED_MODULE_4__["default"],
     props: true
@@ -11917,7 +11934,7 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", [_c("h1", [_vm._v("Home")])])
+    return _c("div", [_c("h1", [_vm._v("Benvenuto nel nostro sito")])])
   },
 ]
 render._withStripped = true
@@ -11945,9 +11962,17 @@ var render = function () {
   return _c("div", [
     _c("h1", [_vm._v("Show del post")]),
     _vm._v(" "),
-    _c("p", [
-      _vm._v("\n        Lo slug del post è: " + _vm._s(_vm.slug) + "\n    "),
-    ]),
+    _vm.arrPosts
+      ? _c("div", [
+          _c("h1", [_vm._v(_vm._s(_vm.arrPosts.title))]),
+          _vm._v(" "),
+          _c("img", {
+            attrs: { src: _vm.arrPosts.image, alt: "arrPosts.title" },
+          }),
+          _vm._v(" "),
+          _c("p", [_vm._v(_vm._s(_vm.arrPosts.content))]),
+        ])
+      : _vm._e(),
   ])
 }
 var staticRenderFns = []
@@ -11987,24 +12012,31 @@ var render = function () {
               attrs: { src: post.image, alt: post.title },
             }),
             _vm._v(" "),
-            _c("div", { staticClass: "card-body d-flex flex-column" }, [
-              _c("h5", { staticClass: "card-title" }, [
-                _vm._v(_vm._s(post.title)),
-              ]),
-              _vm._v(" "),
-              _c("p", { staticClass: "card-text flex-grow-1" }, [
-                _vm._v(_vm._s(post.excerpt)),
-              ]),
-              _vm._v(" "),
-              _c(
-                "a",
-                {
-                  staticClass: "btn btn-primary",
-                  attrs: { href: "admin/posts/" + post.id },
-                },
-                [_vm._v("Leggi")]
-              ),
-            ]),
+            _c(
+              "div",
+              { staticClass: "card-body d-flex flex-column" },
+              [
+                _c("h5", { staticClass: "card-title" }, [
+                  _vm._v(_vm._s(post.title)),
+                ]),
+                _vm._v(" "),
+                _c("p", { staticClass: "card-text flex-grow-1" }, [
+                  _vm._v(_vm._s(post.excerpt)),
+                ]),
+                _vm._v(" "),
+                _c(
+                  "router-link",
+                  {
+                    staticClass: "btn btn-primary",
+                    attrs: {
+                      to: { name: "postsShow", params: { id: post.id } },
+                    },
+                  },
+                  [_vm._v("Leggi")]
+                ),
+              ],
+              1
+            ),
           ]),
         ])
       }),

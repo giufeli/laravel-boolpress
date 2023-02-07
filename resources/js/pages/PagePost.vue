@@ -1,9 +1,14 @@
 <template>
     <div>
         <h1>Show del post</h1>
-        <p>
-            Lo slug del post è: {{ slug }}
-        </p>
+
+        <div v-if="arrPosts">
+
+            <h1>{{ arrPosts.title }}</h1>
+            <img :src="arrPosts.image" alt="arrPosts.title">
+            <p>{{ arrPosts.content }}</p>
+
+        </div>
     </div>
 
 </template>
@@ -13,7 +18,18 @@ export default {
     props:[
         'slug',
         'author',
-    ]
+    ],
+
+    data() {
+            return {
+                arrPosts: [],
+            };
+        },
+
+    created() {
+        axios.get('/api/posts')
+        .then(response => this.arrPosts = response.data.results);
+    }
 }
 </script>
 
