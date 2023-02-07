@@ -3,11 +3,9 @@
         <h1>Show del post</h1>
 
         <div v-if="arrPosts">
-
             <h1>{{ arrPosts.title }}</h1>
             <img :src="arrPosts.image" alt="arrPosts.title">
             <p>{{ arrPosts.content }}</p>
-
         </div>
     </div>
 
@@ -16,20 +14,20 @@
 <script>
 export default {
     props:[
-        'slug',
-        'author',
+        'id'
     ],
 
     data() {
             return {
-                arrPosts: [],
+                arrPosts: null,
             };
         },
 
     created() {
-        axios.get('/api/posts')
+
+        axios.get('/api/posts/'+ this.id)
         .then(response => this.arrPosts = response.data.results);
-    }
+    },
 }
 </script>
 

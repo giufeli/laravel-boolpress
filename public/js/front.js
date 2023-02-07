@@ -3401,19 +3401,17 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  props: ['slug', 'author'],
+  props: ['id'],
   data: function data() {
     return {
-      arrPosts: []
+      arrPosts: null
     };
   },
   created: function created() {
     var _this = this;
-    axios.get('/api/posts').then(function (response) {
+    axios.get('/api/posts/' + this.id).then(function (response) {
       return _this.arrPosts = response.data.results;
     });
   }
